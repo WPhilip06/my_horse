@@ -20,7 +20,7 @@ class Horse {
 
 List<Horse> listHorse = [
   Horse(
-    name: 'McGregor',
+    name: 'McGregor-test',
     birthday: DateTime(2003, 9, 2),
     layer: 'Alazán',
     discipline: HorseDiscipline.completo.name,
