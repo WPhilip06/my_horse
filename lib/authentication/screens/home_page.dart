@@ -5,7 +5,8 @@ import 'package:my_horse/authentication/bloc/app_bloc.dart';
 import 'package:my_horse/authentication/models/user.dart';
 import 'package:my_horse/authentication/repository/auth_repository.dart';
 import 'package:my_horse/authentication/services/firebase.dart';
-import 'package:my_horse/home_page/horse_card.dart';
+import 'package:my_horse/home_page/model/horse.dart';
+import 'package:my_horse/home_page/widgets/horse_card.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});

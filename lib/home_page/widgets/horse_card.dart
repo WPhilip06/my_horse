@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:my_horse/home_page/model/horse.dart';
 
 class HorseHomeCard extends StatelessWidget {
   final Horse horse;
-  HorseHomeCard({
+  const HorseHomeCard({
     super.key,
     required this.horse,
   });
@@ -27,7 +28,7 @@ class HorseHomeCard extends StatelessWidget {
           ),
           Padding(
             padding: const EdgeInsets.all(8.0),
-            child: Container(
+            child: SizedBox(
               // color: Colors.red,
               width: 250,
               child: Row(
@@ -48,12 +49,16 @@ class HorseHomeCard extends StatelessWidget {
                                 .toString(),
                         style: const TextStyle(fontSize: 15),
                       ),
+                      // Text(
+                      //   ('Layer: ') + horse.layer!,
+                      //   style: const TextStyle(fontSize: 15),
+                      // ),
                       Text(
-                        ('Color: ') + horse.color!,
+                        ('Discipline: ${horse.discipline != null ? horse.discipline! : ' - '}'),
                         style: const TextStyle(fontSize: 15),
                       ),
                       Text(
-                        ('Raza: ${horse.breed != null ? horse.breed! : ' - '}'),
+                        ('Breed: ${horse.breed != null ? horse.breed! : ' - '}'),
                         style: const TextStyle(fontSize: 15),
                       ),
                     ],
@@ -67,79 +72,4 @@ class HorseHomeCard extends StatelessWidget {
       ),
     );
   }
-}
-
-List<Horse> listHorse = [
-  Horse(
-    name: 'McGregor',
-    birthday: DateTime(2003, 9, 2),
-    color: 'Alazán',
-    breed: null,
-    imgSrc:
-        "/Users/wilw/Documents/flutter_projects/my_horse/assets/images/mcgregor.jpeg",
-  ),
-  Horse(
-    name: 'Bucéfalo',
-    birthday: DateTime(2003, 9, 2),
-    color: 'Negro azabache',
-    breed: 'Oriental',
-    imgSrc:
-        "/Users/wilw/Documents/flutter_projects/my_horse/assets/images/bucefalo2.jpg",
-  ),
-  Horse(
-    name: 'Marengo',
-    birthday: DateTime(2018, 9, 2),
-    color: 'Gris',
-    breed: 'Árabe',
-    imgSrc:
-        "/Users/wilw/Documents/flutter_projects/my_horse/assets/images/marengo.jpg",
-  ),
-  Horse(
-    name: 'Tornado',
-    birthday: DateTime(2018, 9, 2),
-    color: 'Negro',
-    breed: 'Frisón',
-    imgSrc:
-        "/Users/wilw/Documents/flutter_projects/my_horse/assets/images/tornado.jpg",
-  ),
-  Horse(
-    name: 'Sombra gris',
-    birthday: DateTime(2015, 9, 2),
-    color: 'Blanco',
-    breed: 'Pura raza española',
-    imgSrc:
-        "/Users/wilw/Documents/flutter_projects/my_horse/assets/images/sombragris.jpg",
-  ),
-  Horse(
-    name: 'Spirit',
-    birthday: DateTime(1998, 9, 2),
-    color: 'Bayo',
-    breed: 'Kiger mustang',
-    imgSrc:
-        "/Users/wilw/Documents/flutter_projects/my_horse/assets/images/spirit.jpg",
-  ),
-  Horse(
-    name: 'Totilas',
-    birthday: DateTime(2000, 23, 5),
-    color: 'Negro',
-    breed: 'Raza KWPN',
-    imgSrc:
-        "/Users/wilw/Documents/flutter_projects/my_horse/assets/images/totilas.jpg",
-  ),
-];
-
-class Horse {
-  String name;
-  DateTime? birthday;
-  String? color;
-  String? breed;
-  String? imgSrc;
-
-  Horse({
-    required this.name,
-    this.birthday,
-    this.color,
-    this.breed,
-    this.imgSrc,
-  });
 }
